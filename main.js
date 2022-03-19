@@ -1,12 +1,22 @@
-var user = {     
-     id: "",
-     name: "Marharyta", 
-     age: 18, 
-     email: "l",
-     city: "",
-     phone:""
-}  
-var 
+var user = {
+     id: "id_user",
+     name: "Marharyta",
+     age: 18,
+     email: "kachan@gmail.com",
+     city: "Dnipro",
+     phone: "+380678434276",
+
+     show: function (element) {
+          var list = document.querySelector(element);
+          for(var key in this){
+               if(typeof this[key] !== 'function'){
+                    list.innerHTML += `<p>${this[key]}</p>`
+               }
+               
+          }
+     }
+}
+user.show("#user-card");
 
 //  Создать объект user с свойствами id, name, age, email, city, ... и можно добавить еще что то на свое усмотрение.
 //  Создать метод объекта который выводит в существующий блок на странице все данные пользователя ввиде карточки.
